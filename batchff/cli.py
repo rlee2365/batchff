@@ -15,4 +15,4 @@ def main():
     args = parser.parse_args()
 
     for f in args.files:
-        pass
+        TASK_MAPPING[args.task](f)
