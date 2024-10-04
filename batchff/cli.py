@@ -1,6 +1,9 @@
 import sys
 import argparse
 import batchff.tasks as tasks
+import os
+import platform
+import glob
 
 TASK_MAPPING = {
     'mp3': tasks.process_mp3
@@ -14,5 +17,12 @@ def main():
 
     args = parser.parse_args()
 
-    for f in args.files:
+    if platform.system() == "Windows":
+        files = []
+        for gl in args.files:
+            files.extend(glob.glob(gl))
+    else:
+        files = args.files
+
+    for f in files:
         TASK_MAPPING[args.task](f)
