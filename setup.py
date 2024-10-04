@@ -10,6 +10,6 @@ setup(
         ],
     },
     install_requires=[
-        'ffmpeg'
+        'ffmpeg-python'
     ],                # Add any dependencies here
 )

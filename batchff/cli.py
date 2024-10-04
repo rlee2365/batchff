@@ -1,6 +1,6 @@
 import sys
 import argparse
-import batchff.tasks
+import batchff.tasks as tasks
 
 TASK_MAPPING = {
     'mp3': tasks.process_mp3
